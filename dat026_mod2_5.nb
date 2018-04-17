@@ -1,0 +1,99 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3373,         91]
+NotebookOptionsPosition[      3100,         77]
+NotebookOutlinePosition[      3475,         93]
+CellTagsIndexPosition[      3432,         90]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"DAT", " ", "Mod", " ", "2", " ", "task", " ", "5", " ", 
+    RowBox[{"(", 
+     RowBox[{"Resturaunt", " ", "Problem"}], ")"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"n", " ", ":=", "20"}], "\[IndentingNewLine]", 
+   RowBox[{"f", ":=", "50"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Person", " ", 
+     RowBox[{"A", "'"}], "s", " ", "goal"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"NMinimize", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"an", "*", "bn", "*", "normal"}], " ", "+", " ", 
+        RowBox[{"af", "*", "bf", "*", "fancy"}]}], ",", "\[IndentingNewLine]",
+        "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Must", " ", "choose", " ", "at", " ", "least", " ", "1", " ", 
+         "resturaunt"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"an", "+", "af"}], "\[Equal]", "1"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"bn", "+", "bf"}], "\[Equal]", "1"}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Since", " ", "B", " ", "knows", " ", "A"}], ",", " ", 
+         RowBox[{
+         "B", " ", "will", " ", "match", " ", "their", " ", 
+          "probabilities"}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"bn", "\[Equal]", "an"}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Probabilities", " ", "lies", " ", "within", " ", "0", " ", "to", " ",
+          "1"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"0", "\[LessEqual]", "an", "\[LessEqual]", "1"}], ",", 
+       RowBox[{"0", "\[LessEqual]", "af", "\[LessEqual]", "1"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"0", "\[LessEqual]", "bn", "\[LessEqual]", "1"}], ",", 
+       RowBox[{"0", "\[LessEqual]", "bf", "\[LessEqual]", "1"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"an", ",", "af", ",", "bn", ",", "bf"}], " ", "}"}]}], 
+    "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.7327803705723877`*^9, 3.732780704283017*^9}, {
+   3.732780793357298*^9, 3.732780826595614*^9}, {3.732780944745949*^9, 
+   3.7327809992524705`*^9}, 3.7327815756391115`*^9, {3.732781883801119*^9, 
+   3.732781884679643*^9}, {3.732792405002307*^9, 3.732792406413106*^9}}]
+},
+WindowSize->{759, 697},
+WindowMargins->{{Automatic, 380}, {Automatic, 44}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2538, 55, 520, "Input"]
+}
+]
+*)
+
