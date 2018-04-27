@@ -1,0 +1,263 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7691,        253]
+NotebookOptionsPosition[      6970,        223]
+NotebookOutlinePosition[      7314,        238]
+CellTagsIndexPosition[      7271,        235]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"tm", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0.6", ",", "0.4"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.3", ",", "0.7"}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p", " ", "=", " ", 
+     RowBox[{"DiscreteMarkovProcess", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", "tm"}], "]"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.7336341544231834`*^9, 3.733634227087542*^9}, 
+   3.733634299305313*^9, {3.7336344060579476`*^9, 3.7336344110125213`*^9}, {
+   3.733634480369076*^9, 3.7336345312279773`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.6`", ",", "0.4`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.3`", ",", "0.7`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.733634503307027*^9, 3.733634531567884*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"data", " ", "=", " ", 
+     RowBox[{"RandomFunction", "[", 
+      RowBox[{"p", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "10"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+     RowBox[{"Ticks", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "Automatic", "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"\"\<A\>\"", ",", "\"\<B\>\""}], "}"}]}], "}"}]}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.733634230769887*^9, 3.733634268116846*^9}, 
+   3.7336343297329493`*^9, 3.733634419636797*^9, {3.7336345347955475`*^9, 
+   3.733634541783681*^9}, {3.7336345762648797`*^9, 3.7336345763920307`*^9}, {
+   3.7336346141886435`*^9, 3.733634734760087*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PDF", "[", 
+   RowBox[{
+    RowBox[{"P", "[", "n", "]"}], ",", "k"}], "]"}], "//", 
+  "PiecewiseExpand"}]], "Input",
+ CellChangeTimes->{{3.7336350290598254`*^9, 3.733635063829748*^9}, {
+  3.733635176988685*^9, 3.733635209688962*^9}}],
+
+Cell[BoxData[
+ RowBox[{"PDF", "[", 
+  RowBox[{
+   RowBox[{"P", "[", "n", "]"}], ",", "k"}], "]"}]], "Output",
+ CellChangeTimes->{3.733635213691595*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"PDF", "[", 
+  RowBox[{
+   RowBox[{"StationaryDistribution", "[", "p", "]"}], ",", "1"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PDF", "[", 
+  RowBox[{
+   RowBox[{"StationaryDistribution", "[", "p", "]"}], ",", "2"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7336348076761055`*^9, 3.7336348850227776`*^9}}],
+
+Cell[BoxData["0.42857142857142855`"], "Output",
+ CellChangeTimes->{{3.733634847642373*^9, 3.7336348725428658`*^9}}],
+
+Cell[BoxData["0.5714285714285714`"], "Output",
+ CellChangeTimes->{{3.733634847642373*^9, 3.733634872544834*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[ScriptCapitalP]", "=", 
+     RowBox[{"DiscreteMarkovProcess", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           RowBox[{"1", "/", "2"}], ",", 
+           RowBox[{"1", "/", "2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "/", "2"}], ",", "0", ",", 
+           RowBox[{"1", "/", "2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "/", "2"}], ",", 
+           RowBox[{"1", "/", "2"}], ",", "0"}], "}"}]}], "}"}]}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"\[ScriptCapitalP]", "[", "n", "]"}], ",", "k"}], "]"}], "//", 
+    "PiecewiseExpand"}]}]}]], "Input",
+ CellChangeTimes->{{3.733635163608142*^9, 3.7336351731678243`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\[Piecewise]", GridBox[{
+       {
+        RowBox[{
+         FractionBox["1", "3"], " ", 
+         SuperscriptBox["2", 
+          RowBox[{"-", "n"}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"2", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"-", "1"}], ")"}], "n"]}], "+", 
+           SuperscriptBox["2", "n"]}], ")"}]}], 
+        RowBox[{"k", "\[Equal]", "1"}]},
+       {
+        RowBox[{
+         FractionBox["1", "3"], " ", 
+         SuperscriptBox["2", 
+          RowBox[{"-", "n"}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"-", "1"}], ")"}], 
+            RowBox[{"1", "+", "n"}]], "+", 
+           SuperscriptBox["2", "n"]}], ")"}]}], 
+        RowBox[{
+         RowBox[{"k", "\[Equal]", "2"}], "||", 
+         RowBox[{"k", "\[Equal]", "3"}]}]},
+       {"0", 
+        TagBox["True",
+         "PiecewiseDefault",
+         AutoDelete->True]}
+      },
+      AllowedDimensions->{2, Automatic},
+      Editable->True,
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.84]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}},
+      Selectable->True]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{
+    "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.35]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Piecewise",
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.733635173544537*^9}]
+}, Open  ]]
+},
+WindowSize->{759, 697},
+WindowMargins->{{Automatic, 380}, {Automatic, 44}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 739, 19, 112, "Input"],
+Cell[1322, 43, 249, 7, 31, "Output"]
+}, Open  ]],
+Cell[1586, 53, 890, 23, 72, "Input"],
+Cell[CellGroupData[{
+Cell[2501, 80, 268, 7, 31, "Input"],
+Cell[2772, 89, 151, 4, 64, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2960, 98, 337, 9, 52, "Input"],
+Cell[3300, 109, 115, 1, 31, "Output"],
+Cell[3418, 112, 112, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3567, 118, 1026, 29, 112, "Input"],
+Cell[4596, 149, 2358, 71, 87, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

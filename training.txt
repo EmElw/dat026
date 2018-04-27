@@ -1,0 +1,46 @@
+1. (STOCHASTIC TRAFFIC SIMULATION) A classical application of statistical models is simulation of systems where things happen randomly based on certain probability ditributions that are chosen to be as realistic as possible. This is called Monte Carlo simulation. 
+
+See for example these simple traffic simulation demos: demo1, demo2, demo3, wikipedia (there are lots out there). I intentionally chose some simple demos, so that you can more easily relate to actually creating them yourself. As in many other areas these days, there is a lot of sophisticated software with advanced models and beautiful graphics, where you almost forget that there is the same basic mathematical techniques behind. 
+
+Briefly discuss the differences in the kind of predictions you can draw from stochastic models, compared to when have a deterministic model (like for example an astronomical model of planetary motion).
+
+
+2. (CAR RENTAL PROBLEM) A rental car company has two offices in the cities A and B. Customers are free to leave the cars in any city, independently of where they were rented. Based on collected statistics it is known that a car rented in A is returned there with probability 0.6, and a car rented in B is returned there with probability 0.7. 
+
+a) How can you compute the probability that a single car rented in A is in A after n rentals, as a function of n? Hint: do not worry about the combinatorical complexities of what happens after a few steps. Take one step at a time, define variables etc.
+
+b) What proportion of the cars will be in A and B in the long run?
+
+c) Given an initial number of cars in A and B, is it possible with this model to determine the expected number of cars in A and B as a function of time? Motivate your answer and explain the solution or suggest how to extend the model.
+
+
+3. (TEXT GENERATION) Try out this program that generates text as a Markov chain based on statistics from a template text. The idea is that the program generates the next letter randomly, given the k previous letters, from the distribution p(xn|xn-1,...,xn-k) estimated from the template text (Note that this is not the same as the most probable sequence! The program uses a pseudorandom generator rand(), and you can get other output from the same input by setting another integer as random seed in the srand() function). The template text should be input to stdin, prepare a file with a sufficiently long ordinary Swedish or English text as input - at least a page. The output is on stdout. Try the program for different values of k in the interval 0-5, and see what happens. Discuss your observations (see this as an investigation, the result is where your observations take you!).
+
+The program is a C-program which on a UNIX system can usually be compiled with “cc program.c” or “gcc program.c” - this creates the executable program a.out. You can then run with the command “a.out < textfile” where textfile is a longer file with plain text that you have created. (Or you may have to write “./a.out < textfile”) (It is not a part of this problem to analyze the C program. If you still want to read it, the notation *(a+i) in a C program can be interpreted as a[i].)
+
+
+4. (MEDICAL TEST) A public screening is done of a group of people to find the persons who have the disease X. This is done with a medical test. As with most medical tests, the test is not 100% reliable. It gives a correct result with a probability of 99% if the person has the disease, and with 97% if the person does not have the disease. Prior to the screening, it has been estimated that about 0.33% of the individuals in the group have the disease. 
+
+For a particular person the test has indicated a positive result. What is the probability that the person actually has the disease? (If you cannot solve the problem, at least try to explain why the answer is not simply 0.99 or 0.97!)
+
+Hint: Begin by writing down in mathematical notation what you know from the start. Try also to think what would happen with very extreme or symmetric numbers to explore and understand the problem (this is a good general trick).
+
+
+5. (PROBABILISTIC EXPERT SYSTEM) In statistical expert systems knowledge is represented with a probability distribution over all the variables. The probability distribution is defined by a Markov graph in the form of cause-effect relations (sometimes called probabilistic/belief/bayesian networks). Given the structure of the graph, the parameters can be estimated from statistical data, and inferences and predictions can be made according to the laws of probability by using Bayes theorem.
+
+a) Try out the Bayesian network "Asia" (look in the paper on probabilistic expert systems and the slides from the introductory lecture, available on the additional course material page). Input it into this Bayesian network program (NOTE: it is more and more complicated to run Java in the browser because of security settings. If you have trouble with the most recent version, you can go to "Belief and decision networks" on their download page and select a suitable standalone or applet version). Move over into solver mode, activate "toggle monitoring" for all nodes, add some observations and see how the probabilities are updated. How does the probability of "Bronchitis" change when you observe "positive X-ray"? (As a first example of using the applet you can try out the first simple "Alarm" demo accessible from within the applet.) 
+
+b) Explain mathematically how the joint probability distribution p(x1,x2,x3,x4,x5,x6,x7,x8) is defined for the Asia network. (you can give the variables other names if you think that is convenient)
+
+c) Explain how the calculation in problem 4 can be seen as updating a prior distribution to a posterior distribution. What is the prior, the likelihood function and the posterior in this case?
+
+d) Explain mathematically how the updated node probabilities p(x1|observation), p(x2|observation), .. can be calculated when an observation is added. From your explanation, it should be possible to clearly understand how the updated probability for "Bronchitis" was calculated when the observation "positive X-ray" was given. Hint: think that you already have computed p(x1,x2,x3,x4,x5,x6,x7,x8) as a single big table according to 5b, and how to update this table when new information is received. Do not think about the arrows in the graph here, this may lead to a faster algorithm but is much more complicated.
+
+e) If you like, you can explore the demo applet and learn more. You can also look at the Hugin homepage where you can download a sample copy of the Hugin system, find introductory examples, documentation etc. Write about what you have learned.
+  
+
+6. (WEATHER PREDICTION PROBLEM) Your task is to predict the probability of precipitation ("nederbörd") on a given future day. To your help you have weather statistics from the last five years. Now suppose you want to predict if there will be any precipitation on May 19. Should you base your prediction on a) statistics for May 19 during these years, b) statistics for all days in May during these years c) statistics for all days during these years? Before you consider anything else, assume that the probability is simply estimated as the relative frequency of precipitation for all days you choose to include.
+
+Motivate your answer, and discuss the difficulties involved in choosing the model. Would the situation be any different if you had 100 years of weather statistics? Is choosing the model something that necessarily requires human judgement? Hint: while the specific question is not so very difficult to intuitively answer, the general problem behind the question is deep. It is quite possible to write a PhD thesis around this single question. So think!
+
+(SELF-CHECK) Please follow the instructions of the elementary self-check. If you pass the self-check, simply write "Self-check passed!". Otherwise, fix your submission before you submit. You can receive personal help and/or a short extension if you contact a supervisor in person.
